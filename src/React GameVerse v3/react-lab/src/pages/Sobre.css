@@ -1,0 +1,60 @@
+/* Sobre Section */
+
+.about {
+    padding: 100px;
+    background-image: url('../images/Games-Brasil.webp');
+    background-size: cover; /* Isso faz com que a imagem cubra todo o corpo da página */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    overflow-x: hidden;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 3.8rem;
+    line-height: 1.5;
+    color: #ffffff; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(17, 0, 255, 0.7); /* Contorno em vermelho (substitua pelos valores desejados) */
+}
+
+.aboutCard {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(48, 134, 204, 0.8); /* Ajuste a opacidade conforme necessário */
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+
+}
+
+.about-info {
+    font-size: 1.5rem;
+    color: white;
+
+}
+
+.container {
+    width: 100%; /* Ajuste a largura conforme necessário */
+}
+
+/* Adiciona uma margem inferior ao container para garantir que o gradiente de fundo seja visível */
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card-body {
+    display: inline-block;
+    /* Faz com que os elementos apareçam na mesma linha */
+    margin-right: 20px;
+    /* Espaçamento entre as caixas de seleção e o campo de texto */
+}
+
+#text-input {
+    display: none;
+    vertical-align: top;
+    /* Alinha o campo de texto ao topo das caixas de seleção */
+}

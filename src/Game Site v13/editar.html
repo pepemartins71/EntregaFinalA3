@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVerse</title>
+    <!-- Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Bootstrap Javascript -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="perfilStyles.css">
+    <!-- Font Awesome -->
+    <script defer src="https://kit.fontawesome.com/1c7c4b8991.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navBar">
+        <div class="container">
+            <a class="navbar-brand" href="usuario.html"><img src="images/GameVerse_logo.png" alt="GameVerseLogo"
+                    width="100" height="100">GameVerse</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample07">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuario.html">Menu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Jogos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="favoritos">Favoritos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="categorias">Categorias</a></li>
+
+                        </ul>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav sm-icons">
+                    <li class="nav-item dropdown">
+                      <a id="username" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle icon"></i> Usuário</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="perfil.html" id="perfil">Perfil</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="configuracoes.html" id="configuracoes">Configurações</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html" id="logout" onclick="logout()">Sair</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2" style="padding-top: 12px; padding-bottom: 12px;">
+                    <div class="configVoltar">
+                        <div class="divisãoHorizontal">
+                            <a href="perfil.html">
+                                <h4>Voltar</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10" style="padding-top: 12px; padding-bottom: 12px;">
+                    <div class="configEditar">
+                        <div class="row">
+                            <div class="divisãoHorizontal">
+                                <h4>Editar Jogo</h4>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-left: 30px; margin-bottom: 70px;">
+                            <div class="form-group">
+                                <label for="nome">Nome do Jogo:</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" style="margin-bottom: 10px" name="nome"
+                                        id="nome" readonly>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        style="margin-bottom: 10px; background-color: rgb(231, 231, 231); color:black; font-size: 15px;"
+                                        id="btnEditarNome">Editar</button>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="fabricanteJogo">Fabricante:</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" style="margin-bottom: 10px"
+                                        name="fabricanteJogo" id="fabricanteJogo" readonly>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        style="margin-bottom: 10px; background-color: rgb(231, 231, 231); color:black; font-size: 15px;"
+                                        id="btnEditarFabricante">Editar</button>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="plataforma">Plataforma:</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select" style="margin-bottom: 10px" name="plataforma"
+                                        id="plataforma" disabled>
+                                        <!-- As opções serão preenchidas dinamicamente com base no jogo selecionado -->
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        style="margin-bottom: 10px; background-color: rgb(231, 231, 231); color:black; font-size: 15px;"
+                                        id="btnEditarPlataforma">Editar</button>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="categoria">Categoria:</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select" style="margin-bottom: 10px" name="categoria" id="categoria"
+                                        disabled>
+                                        <option value="Jogado">Jogado</option>
+                                        <option value="Jogando">Jogando</option>
+                                        <option value="Zerado">Zerado</option>
+                                        <option value="Recomendo">Recomendo</option>
+                                        <option value="NaoRecomendo">Não Recomendo</option>
+                                        <option value="Outro">Outro</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        style="margin-bottom: 10px; background-color: rgb(231, 231, 231); color:black; font-size: 15px;"
+                                        id="btnEditarCategoria">Editar</button>
+                                </div>
+                            </div>
+    
+                            <div class="row" style="padding-left: 30px; margin-bottom: 70px;">
+                                <button class="btn btn-primary" type="button" id="btnSalvar"
+                                    style="display: none;">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+</body>
+<script>
+    localStorage.setItem("isLoggedIn", "true");
+
+    function logout() {
+        localStorage.setItem("isLoggedIn", "false");
+    }
+
+    // Função para redirecionar com base no item clicado
+    function redirecionarParaLoja(tipo) {
+        var url = "loja.html"; // URL comum para redirecionar
+
+        // Adicionar o tipo de página à URL (favoritos, categorias)
+        url += "?tipo=" + tipo;
+        window.location.href = url; // Redirecionar para a página com base no tipo
+    }
+
+    // Event listener para os itens do menu
+    document.getElementById("favoritos").addEventListener("click", function () {
+        redirecionarParaLoja("favoritos");
+    });
+
+    document.getElementById("categorias").addEventListener("click", function () {
+        redirecionarParaLoja("categorias");
+    });
+</script>
+<!-- JS Code -->
+<script src="editar.js"></script>
+
+</html>
